@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/fibertek.com.br/lists/propostaOnline/newFormAjax?sendEmail=True&amp;widgetID=17190" class="propostaOnline propostaOnline d-form-new d-form" data-ajax="true" data-ajax-begin="requestBeginHandler" data-ajax-failure="validaEnvioPropostaOnline" data-ajax-method="POST" data-ajax-success="validaEnvioPropostaOnline" enctype="multipart/form-data" id="regform_df596dcc" method="post" novalidate="">
+        <script src="/Scripts/jquery-2.1.4.min.js"></script>
+        <script src="/Scripts/parsley/parsley.min.js"></script>
+        <script src="/Scripts/parsley/i18n/pt-br.js"></script>
+        <div class="formProposta" style="width:100%;">
+            <span id="validationSummary" style="color: red;"></span>
+            <div class="d-field d-text-field name  form-group">
+                <div class="d-reset d-ui-widget d-input d-textbox d-ui-widget-content" style="display:none;"><input type="text" style="display:none;" id="df596dcc-formacontato" name="formacontato" value="123" data-parsley-errors-container="#df596dcc-formacontato-error" data-parsley-validaformacontato="" data-parsley-validaformacontato-message="Uma forma de contato (e-mail, telefone ou celular) é obrigatório." class="d-ui-widget-content"></div>
+                <span id="df596dcc-formacontato-error" class="errors"></span>
+            </div>
+            <div class="d-field d-text-field name  form-group">
+                <label for="df596dcc-name" class="required-label">Nome</label>
+                <div class="d-reset d-ui-widget d-input d-textbox d-ui-widget-content"><input type="text" id="df596dcc-name" name="name" value="" placeholder="Digite seu nome completo" required="" maxlength="100" data-parsley-errors-container="#df596dcc-name-error" class="d-ui-widget-content"></div>
+                <span id="df596dcc-name-error" class="errors"></span>
+            </div>
+            <div class="d-field d-cpfcnpj-field fisicaJuridica">
+                <label for="CpfCnpj">CPF/CNPJ</label>
+                <br>
+                <div class="d-reset d-ui-widget d-input d-textbox d-ui-widget-content"><input id="CpfCnpj" name="fisicaJuridica" data-val="true" maxlength="18" placeholder="Documento" type="text" value="" data-parsley-validacpfcnpj="" data-parsley-errors-container="#df596dcc-documento-error" data-parsley-validacpfcnpj-message="Este documento é inválido." class="d-ui-widget-content"></div>
+                <small>Somente números</small>
+                <span id="df596dcc-documento-error" class="errors"></span>
+            </div>
+            <div class="d-field d-email-field email">
+                <label for="df596dcc-email">E-mail</label>
+                <div class="d-reset d-ui-widget d-input d-textbox d-ui-widget-content"><input type="email" id="df596dcc-email" name="email" value="" placeholder="e-mail@dominio.com.br" maxlength="100" data-parsley-trigger="change" data-parsley-errors-container="#df596dcc-email-error" class="d-ui-widget-content"></div>
+                <span id="df596dcc-email-error" class="errors"></span>
+            </div>
+            <div class="d-field d-text-field telefone">
+                <label for="df596dcc-telefone">Telefone</label>
+                <div class="d-reset d-ui-widget d-input d-textbox d-ui-widget-content"><input type="tel" id="df596dcc-telefone" name="telefone" value="" placeholder="Telefone" data-val-length-max="16" data-val-length="The telefone must be a string with a maximum length of 16." data-parsley-validatelefone="" data-parsley-errors-container="#df596dcc-telefone-error" data-parsley-validatelefone-message="Este telefone é inválido." class="d-ui-widget-content"></div>
+                <span class="d-field-val-msg d-valmsg" data-valmsg-for="telefone" data-valmsg-replace="true"></span>
+                <small>Formato: (xx) xxxx - xxxx</small>
+                <span id="df596dcc-telefone-error" class="errors"></span>
+            </div>
+            <div class="d-field d-text-field celular">
+                <label for="df596dcc-celular">Celular</label>
+                <div class="d-reset d-ui-widget d-input d-textbox d-ui-widget-content"><input type="tel" id="df596dcc-celular" name="celular" value="" placeholder="Celular" data-val-length-max="16" data-val-length="The celular must be a string with a maximum length of 16." data-parsley-validacelular="" data-parsley-errors-container="#df596dcc-celular-error" data-parsley-validacelular-message="Este celular é inválido." class="d-ui-widget-content"></div>
+                <span class="d-field-val-msg d-valmsg" data-valmsg-for="celular" data-valmsg-replace="true"></span>
+                <small>Formato: (xx) xxxxx - xxxx</small>
+                <span id="df596dcc-celular-error" class="errors"></span>
+            </div>
+            <div class="d-field d-choice-field formaDeContato">
+                <label for="df596dcc-formaDeContato">Produto / Serviço</label>
+        
+        
+        <!--Produto-->
+        <select class="d-ui-widget d-picker" style="width: 71%; max-width: 400px;" id="produto" data-parsley-errors-container="#produto-error">
+            
+            <option value="" selected="">-- Selecione um produto / serviço --</option>
+        
+        
+        
+                <option value="fc8c63eb-fb8d-47a5-ba8b-35cc8d07aafa">Controle remoto XTR1000</option>   
+                <option value="61796b93-4ed5-433e-a3d2-be1d9cc79507">Tag para celular</option>   
+        </select>
+        <span id="produto-error" class="errors"></span>
+        <input type="hidden" name="NomeProduto" id="NomeProduto">
+        
+        <script>
+            $('#produto').on('change', function () {
+                $('#NomeProduto').val($('#produto').find(':selected').text());
+            });
+        </script>
+            </div>
+            <div class="d-field d-note-field descricaosolicitacao">
+                <label for="df596dcc-descricaosolicitacao" class="required-label">Mensagem</label>
+                <textarea id="df596dcc-descricaosolicitacao" name="descricaosolicitacao" class="d-ui-widget d-ui-widget-content d-textarea" style="width:69.5%;" required="" data-parsley-errors-container="#df596dcc-descricaosolicitacao-error"></textarea>
+                <span id="df596dcc-descricaosolicitacao-error" class="errors"></span>
+            </div>
+            <br>
+            <div class="d-field">
+                <span class="d-reset d-checkbox"><span class="d-check-holder d-icon-checkbox-unchecked"></span><input type="checkbox" id="aceitereceberemail-17190" name="aceiteReceberEmail" value="False" data-label="Aceito receber e-mails de comunicações, ofertas ou promoções" data-parsley-multiple="aceiteReceberEmail" style="display: none;"><label>Aceito receber e-mails de comunicações, ofertas ou promoções</label></span>
+            </div>
+                <div class="d-field">
+                    <span class="d-reset d-checkbox"><span class="d-check-holder d-icon-checkbox-unchecked"></span><input type="checkbox" id="politicaprivacidade-17190" name="politicaPrivacidade" value="False" data-label="Estou ciente e concordo com a " onchange="if ($(this).prop('checked')) { $('#17190-send').removeAttr('disabled').removeClass('d-state-disable'); } else { $('#17190-send').attr('disabled', 'disabled').addClass('d-state-disable'); }" data-parsley-multiple="politicaPrivacidade" style="display: none;"><label>Estou ciente e concordo com a </label></span>
+                    <label style="vertical-align: -webkit-baseline-middle;"><a target="_blank" href="https://construtor.webbiz.com.br/fibertek.com.br/politicaprivacidade">Política de Privacidade</a>&nbsp;(Obrigatório para continuar)</label>
+                </div>
+            <br>
+            <div class="d-text-field captcha">
+        
+        <link href="/BotDetectCaptcha.ashx?get=layout-stylesheet" rel="stylesheet" type="text/css">
+        
+        <div id="SampleCaptchaDiv_MSCaptcha_PropostaOnline">
+            <label for="lblCaptcha">Digite o código da imagem:</label>
+        
+            
+        
+        
+          <div class="BDC_CaptchaDiv " id="MSCaptcha_PropostaOnline_CaptchaDiv" style="width: 280px !important; height: 50px !important; "><!--
+         --><div class="BDC_CaptchaImageDiv" id="MSCaptcha_PropostaOnline_CaptchaImageDiv" style="width: 250px !important; height: 50px !important;"><!--
+           --><div class="BDC_CaptchaImageDiv" style="width:250px; height:40px;"><img class="BDC_CaptchaImage" id="MSCaptcha_PropostaOnline_CaptchaImage" src="/BotDetectCaptcha.ashx?get=image&amp;c=MSCaptcha_PropostaOnline&amp;t=be5199b1aaac4f948bf5574231a6221f" alt="Retype the CAPTCHA code from the image"></div><!--
+           --><a href="//captcha.org/captcha.html?asp.net" title="BotDetect CAPTCHA ASP.NET Form Validation" style="display: block !important; height: 10px !important; margin: 0 !important; padding: 0 !important; font-size: 9px !important; line-height: 10px !important; visibility: visible !important; font-family: Verdana, DejaVu Sans, Bitstream Vera Sans, Verdana Ref, sans-serif !important; vertical-align: middle !important; text-align: center !important; text-decoration: none !important; background-color: #f8f8f8 !important; color: #606060 !important;">BotDetect CAPTCHA ASP.NET Form Validation</a><!--
+         --></div><!--
+         --><div class="BDC_CaptchaIconsDiv" id="MSCaptcha_PropostaOnline_CaptchaIconsDiv" style="width: 24px !important;"><!--
+           --><a class="BDC_ReloadLink" id="MSCaptcha_PropostaOnline_ReloadLink" href="#" onclick="MSCaptcha_PropostaOnline.ReloadImage(); this.blur(); return false;" title="Change the CAPTCHA code" style="display: inline-block !important;"><img class="BDC_ReloadIcon" id="MSCaptcha_PropostaOnline_ReloadIcon" src="/BotDetectCaptcha.ashx?get=reload-icon" alt="Change the CAPTCHA code"></a><!--
+         --></div>
+            <script src="/BotDetectCaptcha.ashx?get=script-include" type="text/javascript"></script>
+            <script type="text/javascript">
+            //<![CDATA[
+              BotDetect.Init('MSCaptcha_PropostaOnline', 'be5199b1aaac4f948bf5574231a6221f', null, true, true, true, true, 1200, 7200, 0, false);
+            //]]>
+            </script>
+            <script type="text/javascript">
+            //<![CDATA[
+              try{(function(){var bdrsn = document.createElement('script'); bdrsn.type = 'text/javascript'; bdrsn.async = true; bdrsn.src = document.location.protocol + '//remote.captcha.com/include.js?i=ATABMAEwATQBMQEwFJLmy1-Dds47MsqHHWNya-i4J4hvATIBMAEwATEBNAE2ATABMgpwdC1MYXRuLUJSAzI1MAI1MA'; var fsn = document.getElementsByTagName('script')[0]; fsn.parentNode.insertBefore(bdrsn, fsn);})();} catch(err){}
+            //]]>
+            </script>
+            <input type="hidden" name="BDC_VCID_MSCaptcha_PropostaOnline" id="BDC_VCID_MSCaptcha_PropostaOnline" value="be5199b1aaac4f948bf5574231a6221f">
+            <input type="hidden" name="BDC_BackWorkaround_MSCaptcha_PropostaOnline" id="BDC_BackWorkaround_MSCaptcha_PropostaOnline" value="1">
+          </div>
+        
+        
+        
+            <div class="d-reset d-ui-widget d-input d-textbox" style="width: 95% !important;"><input id="txtCaptcha_MSCaptcha_PropostaOnline" name="txtCaptcha_MSCaptcha_PropostaOnline" placeholder="Digite o código da imagem" style="width: 95% !important;" type="text" value="" class="d-ui-widget-content"></div>
+        </div>
+            </div>
+            <br>
+            <div>
+                <button id="17190-send" data-inline="false" tabindex="1" type="submit" disabled="disabled" class="d-reset d-ui-widget d-button d-state-default d-state-disable"><span class="d-button-text">
+                    <span class="d-button-text">Enviar</span>
+                </span></button>
+            </div>
+            <script type="text/javascript">
+            window.$$ = jQuery.noConflict(true);
+            $$('#regform_df596dcc').parsley();
+            $(document).ready(function () {
+                setTimeout(function () {
+                    if ($().mask) {
+                        $("[name='telefone']").mask("(99) 9999 - 9999");
+                        $('input[name="celular"]').mask("(99) 99999 - 9999");
+                    }
+                    else {
+                        $("[name='telefone']").setMask("(99) 9999 - 9999");
+                        $('input[name="celular"]').setMask("(99) 99999 - 9999");
+                    }          
+                }, 5000);
+            });
+            var temID = false;
+            $.urlParam = function (name, url) {
+                if (!url) {
+                    url = window.location.href;
+                }
+                var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(url);
+                if (!results) {
+                    temID = false;
+                    return undefined;
+                }
+                else {
+                    temID = true;
+                    return results[1] || undefined;
+                }
+            }
+            var id = $.urlParam('id');
+            if (temID) {
+                $("select[name='produto']").removeClass("d-state-enable").addClass("d-state-disable");
+                $("select[name='produto']").css("opacity", "0.6");
+                $("select[name='produto']").val(id);
+                $("#NomeProduto").val($("select[name='produto']").find('option:selected').text());
+            }
+            else {
+                $("select[name='produto']").removeClass("d-state-disable").addClass("d-state-enable");
+                $("select[name='produto']").css("opacity", "1");
+                $("select[name='produto']").change(function () {
+                    $("#NomeProduto").val($("select[name='produto']").find('option:selected').text());
+                });
+            }
+            $(window).load(function () {
+                $('#CpfCnpj').attr('maxlength', '18');
+                $('#CpfCnpj').val('');
+            });
+            $(document).ready(function () {
+                $('#CpfCnpj').on('keyup', function (event) {
+                    var v = $(this).val();
+                    v = v.replace(/\D/g, '');
+                    v = (v.length <= 11) ? cpf(v) : cnpj(v);
+                    $(this).val(v);
+                });
+                function cnpj(v) {
+                    v = v.replace(/^(\d{2})(\d)/, '$1.$2')
+                    v = v.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3')
+                    v = v.replace(/\.(\d{3})(\d)/, '.$1/$2')
+                    v = v.replace(/(\d{4})(\d)/, '$1-$2')
+                    return v
+                }
+                function cpf(v) {
+                    v = v.replace(/(\d{3})(\d)/, '$1.$2')
+                    v = v.replace(/(\d{3})(\d)/, '$1.$2')
+                    v = v.replace(/(\d{3})(\d{1,2})$/, '$1-$2')
+                    return v
+                }
+                window.Parsley.addValidator('validacpfcnpj', {
+                    validateString: function (value) {
+                        if (value == '')
+                            return true;
+                        var v = value;
+                        v = v.replace(/\D/g, '');
+                        return (v.length <= 11) ? ValidateCpf(value) : ValidateCnpj(value);
+                    },
+                    messages: {
+                        "pt-br": "Documento inválido."
+                    }
+                });
+                window.Parsley.addValidator('validatelefone', {
+                    validateString: function (value) {
+                        return validatePhone(value);
+                    },
+                    messages: {
+                        "pt-br": "Telefone inválido."
+                    }
+                });
+                window.Parsley.addValidator('validacelular', {
+                    validateString: function (value) {
+                        return validatePhone(value);
+                    },
+                    messages: {
+                        "pt-br": "Celular inválido."
+                    }
+                });
+                window.Parsley.addValidator('validaformacontato', {
+                    validateString: function (value) {
+                        return $('#df596dcc-email').val() != '' || $('#df596dcc-telefone').val() != '' || $('#df596dcc-celular').val() != '';
+                    },
+                    messages: {
+                        "pt-br": "Uma forma de contato (e-mail, telefone ou celular) é obrigatório."
+                    }
+                });
+            });
+            function validatePhone(value) {
+                if (value == '')
+                    return true;
+                var formats = "(99) 9999 - 9999|(99) 99999 - 9999|(99) 99999 - 999";
+                var expFormat = RegExp("^(" +
+                    formats
+                        .replace(/([\(\)])/g, "\\$1")
+                        .replace(/9/g, "\\d") +
+                    ")$");
+                valid = value.match(expFormat) != null;
+                if (valid) {
+                    var expSameDigit = RegExp("^(\\d)\\1*$");
+                    value = value.replace(' - ', '').replace('(', '').replace(')', '').replace(' ', '');
+                    valid = value.match(expSameDigit) == null;
+                }
+                return valid;
+            }
+            </script>
+        </div>
+        <style>
+            .formProposta .d-field {
+                width: 100%;
+                margin-top: 20px;
+            }
+        
+            .formProposta .d-picker {
+                width: 70%;
+            }
+        
+            .infoJuridica {
+                width: 30%;
+            }
+        
+                .infoJuridica div {
+                    width: 100%;
+                }
+        
+            .clear10 {
+                width: 10%;
+            }
+        
+            .formProposta .field-validation-error {
+                width: 100%;
+            }
+        
+            .captcha {
+                width: 75%;
+            }
+        
+            .errors > ul > li {
+                list-style: none;
+                font-size: 0.8em;
+                color: #c0313e;
+                background-color: #ffdadd;
+                padding: 3px;
+                border-radius: 4px;
+                margin-top: 5px;
+                width: 70%;
+            }
+        
+            @media screen and (max-width: 480px) {
+                .formProposta .d-field {
+                    width: 100%;
+                    margin-top: 15px;
+                }
+        
+                .infoJuridica {
+                    width: 45%;
+                }
+        
+                .formProposta .field-validation-error {
+                    width: 100%;
+                }
+        
+                .captcha {
+                    width: 100%;
+                }
+        
+                .errors > ul > li {
+                    width: 100%;
+                }
+            }
+        </style>
+        </form>
+</body>
+</html>
